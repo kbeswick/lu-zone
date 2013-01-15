@@ -1,18 +1,9 @@
-<!--
-
-    The contents of this file are subject to the license and copyright
-    detailed in the LICENSE and NOTICE files at the root of the source
-    tree and available online at
-
-    http://www.dspace.org/license/
-
--->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
-    <title>DSpace: Site Administrator Help</title>
-    <link rel="stylesheet" href="../styles.css" type="text/css"/>
+    <title>LU|ZONE|UL: Site Administrator Help</title>
+    <link rel="stylesheet" href="../styles.css.jsp" type="text/css"/>
   </head>
 
   <body class="help">
@@ -46,9 +37,9 @@
 
     <h3><a name="general"></a>General Information</h3>
 
-    <p>As of DSpace 1.2, many administration tools can now be accessed via the regular DSpace UI.  However, they only appear if you are logged in as an administrator.  The easiest way to do this is to go to your 'My DSpace' page.</p>
+    <p>As of LU|ZONE|UL 1.2, many administration tools can now be accessed via the regular LU|ZONE|UL UI.  However, they only appear if you are logged in as an administrator.  The easiest way to do this is to go to your 'My LU|ZONE|UL' page.</p>
 
-    <p>Some tasks must be performed entrally using the administration user interface, part of the Web UI. To access the administration UI, enter the base URL of your DSpace followed by <code>/dspace-admin</code>, for example:</p>
+    <p>Some tasks must be performed entrally using the administration user interface, part of the Web UI. To access the administration UI, enter the base URL of your LU|ZONE|UL followed by <code>/dspace-admin</code>, for example:</p>
 
     <pre>https://dspace.myu.edu/dspace-admin</pre>
 
@@ -81,7 +72,7 @@
 
     <h3><a name="createcollection"></a>Creating a Collection</h3>
 
-    <p>Creating a collection is done with a 'wizard' style tool that should be familiar to most people who've used modern operating systems user interfaces.  It's rather similar to the submission interface in DSpace.</p>
+    <p>Creating a collection is done with a 'wizard' style tool that should be familiar to most people who've used modern operating systems user interfaces.  It's rather similar to the submission interface in LU|ZONE|UL.</p>
 
     <p><strong>Note:  You cannot add new e-people records with this wizard.</strong>  All the e-person records must be loaded into the system first.  However, you will be able to add more e-people and/or groups to each group associated with the collection later if required.</p>
 
@@ -134,20 +125,7 @@
 
     <p><strong>Copyright Text</strong> is simply text that will appear at the bottom of the collection's home page.</p>
 
-    <p><strong>License</strong> is the <em>deposit license</em> (the license that submitters must grant when they submit an item) for this collection.  This overrides the site default (which is stored in <em>[dspace]</em>/config/default.license and must be edited by a systems adminstrator).  If you leave this field blank, the site default license is used.
-    There are some substitution variables that can be used to create personalized licenses:</p>
-    <ul>
-	    <li><strong>%1$s</strong> will be translated in the "submitter first name"</li> 
-		<li><strong>%2$s</strong> will be translated in the "submitter last name"</li>
-		<li><strong>%3$s</strong> will be translated in the "submitter email" </li>
-		<li><strong>%4$s</strong> will be translated in the current date</li>
-		<li><strong>%5$s</strong> will be translated in the collection info</li> 
-		<li><strong>%6$s</strong> will be translated in the item info </li>
-		<li><strong>%7$s</strong> will be translated in the eperson info</li> 
-    </ul>
-	<p>If you need to embed in the license text the % symbol you need to escape it with a second %, i.e. you need to write %%. 
-	It is recommended to use a dummy submission to check the license change:  <strong>check the resulting license in the Accept/reject Licence step.</strong> 
-    </p>
+    <p><strong>License</strong> is the <em>deposit license</em> (the license that submitters must grant when they submit an item) for this collection.  This overrides the site default (which is stored in <em>[dspace]</em>/config/default.license and must be edited by a systems adminstrator).  If you leave this field blank, the site default license is used.</p>
 
     <p><strong>Provenance</strong> is a free-text field you can put any provenance information in you feel like.  It is not visible to end-users.</p>
 
@@ -321,7 +299,7 @@
 
     <h3><a name="dublincore"></a>Metadata Registry</h3>
 
-    <p>By default DSpace uses a qualified version of the Dublin Core schema based on the <a href="http://dublincore.org/documents/library-application-profile/">Dublin Core Libraries Working Group Application Profile (LAP)</a>. You can also configure other flat metadata schemas in the registry. The metadata registry provides a list of the elements and qualifiers, with comments.</p>
+    <p>By default LU|ZONE|UL uses a qualified version of the Dublin Core schema based on the <a href="http://dublincore.org/documents/library-application-profile/">Dublin Core Libraries Working Group Application Profile (LAP)</a>. You can also configure other flat metadata schemas in the registry. The metadata registry provides a list of the elements and qualifiers, with comments.</p>
 
     <p>You can edit the registry to suit your needs with this tool, but note that:</p>
 
@@ -361,7 +339,7 @@
     <p>This section is used to set specific authorization policies
      for communities, collections, and items. In order for users
       to perform an action on an object, they must have permission;
-       DSpace operates a 'default deny' policy. Permissions do not 'commute';
+       LU|ZONE|UL operates a 'default deny' policy. Permissions do not 'commute';
         for example, if an e-person has READ permission on an item,
          they might not necessarily have READ permission on the bundles
           and bitstreams in that item.</p>
@@ -429,7 +407,7 @@
 
     <h3><a name="editnews"></a>Edit News</h3>
 
-    <p>You can use this tool to edit the text ("news") in two places on the DSpace home page:
+    <p>You can use this tool to edit the text ("news") in two places on the LU|ZONE|UL home page:
     the top box of the center frame, and the right sidebar. </p>
     <p>After clicking on "Edit News" on the admin menu, click on the <strong>Edit</strong> button next
     to the news item you wish to edit. A text box will be displayed with the current news, which can be deleted
@@ -438,22 +416,10 @@
     <p>&nbsp;</p>
     
     <h3><a name="editlicense"></a>Edit Default License</h3>
-    <p>You can use this tool to edit the default license of DSpace</p>
+    <p>You can use this tool to edit the default license of LU|ZONE|UL</p>
     <p>The default license is used when no collection specific license is defined.</p>
     <p>Note that changing the default license has no effect on allready published items.</p>
-	<p>Some substitution variables are available to make possible configure a contextual submission license:</p>
-    <ul>
-	    <li><strong>%1$s</strong> will be translated in the "submitter first name"</li> 
-		<li><strong>%2$s</strong> will be translated in the "submitter last name"</li>
-		<li><strong>%3$s</strong> will be translated in the "submitter email" </li>
-		<li><strong>%4$s</strong> will be translated in the current date</li>
-		<li><strong>%5$s</strong> will be translated in the collection info</li> 
-		<li><strong>%6$s</strong> will be translated in the item info </li>
-		<li><strong>%7$s</strong> will be translated in the eperson info</li> 
-    </ul>
-	<p>If you need to embed in the license text the % symbol you need to escape it with a second %, i.e. you need to write %%. 
-	It is recommended to use a dummy submission to check the license change:  <strong>check the resulting license in the Accept/reject Licence step.</strong> 
-    </p>
-	
+
+
   </body>
 </html>

@@ -64,13 +64,15 @@
 <%
 for (int i = supportedLocales.length-1; i >= 0; i--)
 {
+  if (!supportedLocales[i].equals(sessionLocale)) {
 %>
         <a class ="langChangeOn"
                   onclick="javascript:document.repost.locale.value='<%=supportedLocales[i].toString()%>';
                   document.repost.submit();">
                  <%= supportedLocales[i].getDisplayLanguage(supportedLocales[i])%>
         </a> &nbsp;
-<%
+  <%
+}
 }
 }
 %>

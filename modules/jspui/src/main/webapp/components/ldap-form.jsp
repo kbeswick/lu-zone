@@ -18,13 +18,12 @@
     <tr>
         <td class="evenRowEvenCol">
            <form method="post" action="<%= request.getContextPath() %>/ldap-login">
-	    <p><strong><a href="<%= request.getContextPath() %>/register"><fmt:message key="jsp.components.ldap-form.newuser"/></a></strong></p>            
 	    <p><fmt:message key="jsp.components.ldap-form.enter"/></p>
  
                <table border="0" cellpadding="5" align="center">
                     <tr>
                         <td class="standard" align="right"><strong><fmt:message key="jsp.components.ldap-form.username-or-email"/></strong></td>
-                        <td><input tabindex="1" type="text" name="login_netid"></td>
+                        <td><input type="text" name="login_netid"></td>
                     </tr>
                     <tr>
             		<td class="standard" align="right"><strong><fmt:message key="jsp.components.ldap-form.password"/></strong></td>

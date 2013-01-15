@@ -226,6 +226,15 @@
 
   <tr class="navigationBarItem">
     <td>
+      <img alt="" src="<%= request.getContextPath() %>/image/<%= ( currentPage.endsWith( "/irfaq" ) ? "arrow-highlight" : "arrow" ) %>.gif" width="16" height="16"/>
+    </td>
+    <td nowrap="nowrap" class="navigationBarItem">
+      <dspace:popup page="<%= LocaleSupport.getLocalizedMessage(pageContext, \"irfaq.index\")%>"><fmt:message key="jsp.layout.navbar-default.irfaq"/></dspace:popup>
+    </td>
+  </tr>
+
+  <tr class="navigationBarItem">
+    <td>
       <img alt="" src="<%= request.getContextPath() %>/image/<%= ( currentPage.endsWith( "/help" ) ? "arrow-highlight" : "arrow" ) %>.gif" width="16" height="16"/>
     </td>
     <td nowrap="nowrap" class="navigationBarItem">
@@ -235,10 +244,10 @@
 
   <tr class="navigationBarItem">
     <td>
-      <img alt="" src="<%= request.getContextPath() %>/image/<%= ( currentPage.endsWith( "/about" ) ? "arrow-highlight" : "arrow" ) %>.gif" width="16" height="16"/>
+      <img alt="" src="<%= request.getContextPath() %>/image/<%= "arrow" %>.gif" width="16" height="16"/>
     </td>
     <td nowrap="nowrap" class="navigationBarItem">
-      <a href="http://www.dspace.org/"><fmt:message key="jsp.layout.navbar-default.about"/></a>
+      <a target="_blank" href="<%= request.getContextPath() %>/feedback"><fmt:message key="jsp.layout.footer-default.feedback"/></a>
     </td>
   </tr>
 </table>

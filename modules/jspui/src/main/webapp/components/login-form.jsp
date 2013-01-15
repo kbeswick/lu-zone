@@ -18,9 +18,7 @@
   <tr>
     <td class="evenRowEvenCol">
      <form name="loginform" id="loginform" method="post" action="<%= request.getContextPath() %>/password-login">  
-      <p><strong><a href="<%= request.getContextPath() %>/register"><fmt:message key="jsp.components.login-form.newuser"/></a></strong></p>
-	  <p><fmt:message key="jsp.components.login-form.enter"/></p>
-
+       <p><fmt:message key="jsp.components.login-form.enter"/></p>
         <table border="0" cellpadding="5" align="center">
           <tr>
             <td class="standard" align="right"><label for="tlogin_email"><strong><fmt:message key="jsp.components.login-form.email"/></strong></label></td>

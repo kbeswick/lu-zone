@@ -93,17 +93,12 @@
             <%-- DSpace logo --%>
             <tr>
                 <td>
-                    <a href="<%= request.getContextPath() %>/"><img src="<%= request.getContextPath() %>/image/dspace-blue.gif" alt="<fmt:message key="jsp.layout.header-default.alt"/>" width="198" height="79" border="0"/></a></td>
-                    <td class="tagLine" width="99%"> <%-- Make as wide as possible. cellpadding repeated for broken NS 4.x --%>
-                    <a class="tagLineText" target="_blank" href="http://www.dspace.org/"><fmt:message key="jsp.layout.header-default.about"/></a>
+                    <a href="<%= request.getContextPath() %>/"><img src="<%= request.getContextPath() %>/image/LUzoneUL_Pos.jpg" alt="LU|zone|UL" border="0"/></a></td>
                 </td>
                 <td nowrap="nowrap" valign="middle">
                 </td>
             </tr>
-            <tr class="stripe"> <%-- Blue stripe --%>
-                <td colspan="3">&nbsp;</td>
-            </tr>
-        </table>
+       </table>
 
         <%-- Localization --%>
 <%--  <c:if test="${param.locale != null}">--%>
@@ -114,7 +109,7 @@
         <%-- Page contents --%>
 
         <%-- HACK: width, border, cellspacing, cellpadding: for non-CSS compliant Netscape, Mozilla browsers --%>
-        <table class="centralPane" width="99%" border="0" cellpadding="3" cellspacing="1">
+        <table class="centralPane" width="100%" border="0" cellpadding="3" cellspacing="1">
 
             <%-- HACK: valign: for non-CSS compliant Netscape browser --%>
             <tr valign="top">
