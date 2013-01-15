@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE input-forms SYSTEM "input-forms.dtd">
+<!DOCTYPE input-forms >
 
 
 <input-forms>
@@ -44,7 +44,7 @@
          <dc-qualifier>author</dc-qualifier>
          <repeatable>true</repeatable>
          <label>Authors</label>
-         <input-type>name</input-type>
+                 <input-type>name</input-type>
          <hint>Enter the names of the authors of this item below.</hint>
          <required></required>
        </field>
@@ -112,7 +112,7 @@
          <dc-qualifier>ispartofseries</dc-qualifier>
          <repeatable>true</repeatable>
          <label>Series/Report No.</label>
-         <input-type>series</input-type>
+         <input-type>twobox</input-type>
          <hint>Enter the series and number assigned to this item by your community.</hint>
          <required></required>
        </field>
@@ -199,6 +199,30 @@ it, please enter the types and the actual numbers or codes below.</hint>
          <hint> Enter any other description or comments in this box. </hint>
          <required></required>
        </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>description</dc-element>
+         <dc-qualifier>degree</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Degree Name (for thesis submissions only)</label>
+         <input-type>onebox</input-type>
+         <hint> Degree Name </hint>
+         <required></required>
+       </field>
+
+       <field>
+		 <dc-schema>dc</dc-schema>
+         <dc-element>publisher</dc-element>
+         <dc-qualifier>grantor</dc-qualifier>
+         <repeatable>false</repeatable>
+         <label>Degree Grantor (for Thesis submissions only)</label>
+         <input-type value-pairs-name="degree_grantor">dropdown</input-type>
+         <hint> Degree Grantor </hint>
+         <required></required>
+       </field>
+
+
      </page>
    </form>
 
@@ -257,6 +281,17 @@ it, please enter the types and the actual numbers or codes below.</hint>
      <pair>
        <displayed-value>ISBN</displayed-value>
        <stored-value>isbn</stored-value>
+     </pair>
+   </value-pairs>
+
+   <value-pairs value-pairs-name="degree_grantor" dc-term="publisher">
+     <pair>
+       <displayed-value>N/A</displayed-value>
+       <stored-value></stored-value>
+     </pair>
+     <pair>
+       <displayed-value>Laurentian University of Sudbury</displayed-value>
+       <stored-value>Laurentian University of Sudbury</stored-value>
      </pair>
    </value-pairs>
 
