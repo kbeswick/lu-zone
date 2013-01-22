@@ -18,6 +18,12 @@
     </command>
 
     <command>
+        <name>classpath</name>
+        <description>Calculate and display the DSpace classpath</description>
+        <step></step>
+    </command>
+
+    <command>
         <name>cleanup</name>
         <description>Remove deleted bitstreams from the assetstore</description>
         <step>
@@ -83,7 +89,7 @@
 
     <command>
         <name>filter-media</name>
-        <description>Perform the media filtering to extract full text from docuemnts and to create thumbnails</description>
+        <description>Perform the media filtering to extract full text from documents and to create thumbnails</description>
         <step>
             <class>org.dspace.app.mediafilter.MediaFilterManager</class>
         </step>
@@ -115,7 +121,7 @@
 
     <command>
         <name>index</name>
-        <description>General index command (requires extra paramters)</description>
+        <description>General index command (requires extra parameters)</description>
         <step>
             <class>org.dspace.browse.IndexBrowse</class>
         </step>
@@ -286,6 +292,14 @@
     </command>
 
     <command>
+        <name>stats-log-importer-elasticsearch</name>
+        <description>Import solr-format converted log files into Elastic Search statistics</description>
+        <step>
+            <class>org.dspace.statistics.util.StatisticsImporterElasticSearch</class>
+        </step>
+    </command>
+
+    <command>
         <name>stats-util</name>
         <description>Statistics Client for Maintenance of Solr Statistics Indexes</description>
         <step>
@@ -295,7 +309,7 @@
 
     <command>
         <name>structure-builder</name>
-        <description>Build DSpace commnity and collection structure</description>
+        <description>Build DSpace community and collection structure</description>
         <step>
             <class>org.dspace.administer.StructBuilder</class>
         </step>
@@ -317,9 +331,25 @@
         </step>
     </command>
 
+     <command>
+        <name>setup-database</name>
+        <description>Create the database tables</description>
+        <step>
+            <class>org.dspace.storage.rdbms.InitializeDatabase</class>
+        </step>
+    </command>
+
+    <command>
+        <name>clean-database</name>
+        <description>Remove the database tables</description>
+        <step>
+            <class>org.dspace.storage.rdbms.InitializeDatabase</class>
+        </step>
+    </command>
+
     <command>
         <name>test-email</name>
-        <description>Test the DSpace email server settings OK</description>
+        <description>Test the DSpace email server settings are OK</description>
         <step>
             <class>org.dspace.core.Email</class>
         </step>
@@ -334,12 +364,27 @@
     </command>
 
     <command>
-		<name>update-discovery-index</name>
-		<description>Update Discovery Solr Search Index</description>
-		<step>
-			<class>org.dspace.discovery.IndexClient</class>
-		</step>
-	</command>
+        <name>update-discovery-index</name>
+        <description>Update Discovery Solr Search Index</description>
+        <step>
+            <class>org.dspace.discovery.IndexClient</class>
+        </step>
+    </command>
 
+    <command>
+        <name>migrate-embargo</name>
+        <description>Embargo manager tool used to migrate old version of Embargo to the new one included in dspace3</description>
+        <step>
+            <class>org.dspace.embargo.EmbargoManager</class>
+        </step>
+    </command>
+
+    <command>
+        <name>oai</name>
+        <description>OAI script manager</description>
+        <step>
+            <class>org.dspace.xoai.app.XOAI</class>
+        </step>
+    </command>
 
 </commands>
