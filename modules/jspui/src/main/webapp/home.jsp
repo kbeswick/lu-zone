@@ -174,5 +174,6 @@ for (int i = supportedLocales.length-1; i >= 0; i--)
 	<%
 	    }
 	%>
+	<%@ include file="discovery/static-sidebar-facet.jsp" %>
     </dspace:sidebar>
 </dspace:layout>
