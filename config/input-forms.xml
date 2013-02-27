@@ -201,9 +201,8 @@ it, please enter the types and the actual numbers or codes below.</hint>
        </field>
 
        <field>
-		 <dc-schema>dc</dc-schema>
-         <dc-element>description</dc-element>
-         <dc-qualifier>degree</dc-qualifier>
+	 <dc-schema>thesis</dc-schema>
+         <dc-element>name</dc-element>
          <repeatable>false</repeatable>
          <label>Degree Name (for thesis submissions only)</label>
          <input-type>onebox</input-type>
@@ -212,9 +211,8 @@ it, please enter the types and the actual numbers or codes below.</hint>
        </field>
 
        <field>
-		 <dc-schema>dc</dc-schema>
-         <dc-element>publisher</dc-element>
-         <dc-qualifier>grantor</dc-qualifier>
+	 <dc-schema>thesis</dc-schema>
+         <dc-element>grantor</dc-element>
          <repeatable>false</repeatable>
          <label>Degree Grantor (for Thesis submissions only)</label>
          <input-type value-pairs-name="degree_grantor">dropdown</input-type>
@@ -284,7 +282,7 @@ it, please enter the types and the actual numbers or codes below.</hint>
      </pair>
    </value-pairs>
 
-   <value-pairs value-pairs-name="degree_grantor" dc-term="publisher">
+   <value-pairs value-pairs-name="degree_grantor" dc-term="grantor">
      <pair>
        <displayed-value>N/A</displayed-value>
        <stored-value></stored-value>
