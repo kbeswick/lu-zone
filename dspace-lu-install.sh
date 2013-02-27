@@ -1,5 +1,5 @@
 #!/bin/bash
-# Install DSpace from source, with Laurentian customizations
+# Install/update DSpace from source, with Laurentian customizations
 
 
 # Prerequisites:
@@ -7,16 +7,12 @@
 # 2. Backup the /dspace/assetstore directory, and the database. Define
 #    location/file name in DSPACE_DB_BACKUP and ASSETSTORE_BACKUP respectively
 # 3. Download Laurentian customizations & link to DSpace source tree
-# 4. Download UNB customizations for the use of the ETDMS crosswalk
 #
-#    Steps 2&3 can be done by forking github.com/kbeswick/lu-zone &
-#    github.com/kbeswick/unb-dspace , then:
+#    Steps 2&3 can be done by forking github.com/kbeswick/lu-zone, then:
 #
 #  ln -s lu-zone/config /path/to/dspace/src/dspace/config
 #  ln -s lu-zone/modules/jspui /path/to/dspace/src/dspace/modules/jspui
 #
-#  ... and following the instructions under the 'Metadata crosswalks' section of
-#  the Readme of the unb-dspace repository
 #
 # DISCLAIMER:
 #
@@ -42,7 +38,7 @@ sudo rm -Rf /dspace
 sudo su -c "dropdb dspace ; createdb -U dspace -E UNICODE dspace" postgres
 
 # Install DSpace
-cd target/dspace-1.7.2-build.dir/
+cd target/dspace-3.0-build/
 sudo ant fresh_install
 
 # Copy over the backed up assetstore
@@ -51,6 +47,10 @@ sudo cp -R ${ASSETSTORE_BACKUP} /dspace/
 
 # Recreate the database with backed up version
 sudo su -c "cd /var/lib/postgresql && dropdb dspace && createdb -U dspace -E UNICODE dspace && psql dspace < ${DSPACE_DB_BACKUP}" postgres
+
+# Do database upgrades
+#psql -U dspace dspace < ${DSPACE_SRC}/dspace/etc/postgres/database_schema_17-18.sql
+#psql -U dspace dspace < ${DSPACE_SRC}/dspace/etc/postgres/database_schema_18-3.sql
 
 # Be consistent with our previous DSpace URLS
 sudo ln -s /dspace/webapps/oai /dspace/webapps/dspace-oai
@@ -63,6 +63,7 @@ sudo chown -R tomcat6:root /dspace
 sudo /dspace/bin/dspace index-init
 sudo /etc/init.d/tomcat6 start
 sudo /dspace/bin/dspace filter-media
+sudo /dspace/bin/dspace oai import -o
 
 # Done
 echo "----------------------"
